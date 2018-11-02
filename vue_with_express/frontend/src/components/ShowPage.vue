@@ -1,7 +1,10 @@
 <template>
   <div>
+    <router-link :to="{ name: 'index' }">홈으로</router-link>
     <h1>상세 내용</h1>
-
+    <p>
+      {{this.movie[0].name}}
+    </p>
   </div>
 </template>
 
@@ -18,9 +21,9 @@
     },
     data: function () {
       return {
-        movie: {}
+        movie: {},
       }
-    }
+    },
   }
 </script>
 
