@@ -3,21 +3,24 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-import Index from '@/components/IndexPage'
-import Show from '@/components/ShowPage'
+// import Index from '@/components/IndexPage'
+// import Show from '@/components/ShowPage'
+
+import View from '@/components/View'
+import Detail from '@/components/Detail'
 
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'index',
-      component: Index
+      name: 'view',
+      component: View
     },
     {
       path: '/:id',
-      name: 'show',
-      component: Show
+      name: 'detail',
+      component: Detail
     }
   ]
 })
