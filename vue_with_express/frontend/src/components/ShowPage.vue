@@ -12,6 +12,7 @@
       var id = this.$route.params.id
       this.$http.get(`/api/movies/${id}`)
         .then((response) => {
+          console.log(response.data);
           this.movie = response.data
         })
     },
