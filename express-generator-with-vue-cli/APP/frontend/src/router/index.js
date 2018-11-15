@@ -5,6 +5,7 @@ import Home from '@/components/Home'
 import Detail from '@/components/Detail'
 import Add from '@/components/Add'
 import Edit from '@/components/Edit'
+import Delete from '@/components/Delete'
 
 Vue.use(Router);
 
@@ -21,6 +22,7 @@ export default new Router({
       ]
     },
     { path: '/:id/edit', component: Edit },
+    { path: '/:id/delete', component: Delete },
     { path: '*', component: { template: '<div>Not Found</div>'} }
   ]
   // routes: [

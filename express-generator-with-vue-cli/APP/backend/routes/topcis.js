@@ -58,6 +58,17 @@ router.post('/add', function(req, res){
     })
 });
 
+router.post('/:id/delete', function(req, res){
+    var id = req.params.id;
+    var sql = 'DELETE FROM topic WHERE id=?';
+    conn.query(sql, [id], function(err, result){
+        if(err){
+            console.log(err);
+            res.status(500).send('Internal Server Error');
+        }
+        // res.redirect('/topic');
+    })
+});
 
 
 module.exports = router;

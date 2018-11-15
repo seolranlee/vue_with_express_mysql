@@ -21,8 +21,7 @@ export default {
   created () {
     this.$http.get('/api/topics')
       .then((response) => {
-        this.topics = response.data
-        console.log(this.topics)
+        this.topics = response.data;
       })
   },
   data () {
@@ -41,6 +40,15 @@ export default {
   methods: {
     addEvent:function(){
       this.$eventHub.$on('onAdd',this.addData);
+      this.$eventHub.$on('onDelete',this.removeData);
+    },
+    indexWhere: function(array, conditionFn) {
+      const item = array.find(conditionFn)
+      return array.indexOf(item)
+    },
+    removeData : function( data ){
+      const index = this.indexWhere(this.topics, item => item.id === data.id);
+      this.topics.splice(index, 1);
     },
     addData : function( data ){
       this.topics.push({

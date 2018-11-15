@@ -13,7 +13,7 @@
         name="Add"/>
     </div>
     <ul class="func">
-      <li><router-link to="/add">add</router-link></li>
+      <li v-if="this.$route.params.id !== 'add'"><router-link to="/add">add</router-link></li>
       <li v-if="topic"><router-link :to="`${topic.id}/edit`">edit</router-link></li>
       <li v-if="topic"><router-link :to="`${topic.id}/delete`">delete</router-link></li>
     </ul>
