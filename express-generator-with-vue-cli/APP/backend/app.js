@@ -8,7 +8,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 // topics router
-var topics = require('./routes/topcis');
+var topics = require('./routes/topics');
 
 var app = express();
 

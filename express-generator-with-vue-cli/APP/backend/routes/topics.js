@@ -10,15 +10,6 @@ var conn = mysql.createConnection({
 });
 conn.connect();
 
-// router.get(['/', '/:id'], function (req, res, next) {
-//     var sql = 'SELECT id, title FROM topic';
-//     conn.query(sql, function(err, topics, fields){
-//         res.send(topics)
-//     });
-//     // res.send(topics)
-// });
-
-
 router.get(['/', '/:id'], function (req, res, next) {
     var sql = 'SELECT * FROM topic';
     conn.query(sql, function(err, topics, fields){
