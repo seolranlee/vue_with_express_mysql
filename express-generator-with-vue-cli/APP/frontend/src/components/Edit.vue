@@ -1,17 +1,22 @@
 <template>
-  <div class="edit" v-if="topic">
-    <p>
-      <input type="text" name="title" placeholder="title" v-model="subject.title">
-    </p>
-    <p>
-      <textarea name="description" cols="30" rows="10" v-model="subject.description">{{topic.description}}</textarea>
-    </p>
-    <p>
-      <input type="text" name="author" placeholder="author" v-model="subject.author">
-    </p>
-    <p>
-      <router-link v-on:click.native="handleClick(topic.id)" :to="`../${topic.id}`" >submit</router-link>
-    </p>
+  <div class="edit" >
+    <div v-if="topic">
+      <p>
+        <input type="text" name="title" placeholder="title" v-model="subject.title">
+      </p>
+      <p>
+        <textarea name="description" cols="30" rows="10" v-model="subject.description">{{topic.description}}</textarea>
+      </p>
+      <p>
+        <input type="text" name="author" placeholder="author" v-model="subject.author">
+      </p>
+      <p>
+        <router-link v-on:click.native="handleClick(topic.id)" :to="`../${topic.id}`" >submit</router-link>
+      </p>
+    </div>
+    <div class="v-else">
+      <h1>404</h1>
+    </div>
   </div>
 </template>
 

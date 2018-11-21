@@ -1,11 +1,16 @@
 <template>
-  <div v-if="topic">
-    <h2>{{topic.title}}</h2>
-    <p>{{topic.description}}</p>
-    <p>by {{topic.author}}</p>
-    <router-view
-      :topic="topic"
-      name="Edit"></router-view>
+  <div>
+    <div v-if="topic">
+      <h2>{{topic.title}}</h2>
+      <p>{{topic.description}}</p>
+      <p>by {{topic.author}}</p>
+      <router-view
+        :topic="topic"
+        name="Edit"></router-view>
+    </div>
+    <div v-else>
+      <h1>404</h1>
+    </div>
   </div>
 </template>
 
